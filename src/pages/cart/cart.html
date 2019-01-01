@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"header.cart" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+  <ion-list>
+    <ion-item-sliding *ngFor="let i of items">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{i.variant.image?.src}}">
+        </ion-avatar>
+        <div class="item-label">
+          <p class="product-title">{{i.title}}</p>
+          <p class="product-price">{{"body.price" | translate}}: <span class="price-value">{{i.variant.price}}</span></p>
+          <p class="product-qty">{{"body.qty" | translate}}: <span class="qty-value">{{i.quantity}}</span></p>
+        </div>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="pushItemDetail(i)">
+          <ion-icon name="create"></ion-icon>
+          {{"body.edit" | translate}}
+        </button>
+        <button ion-button color="danger" (click)="deleteFromCart(i.id)">
+          <ion-icon name="trash"></ion-icon>
+          {{"body.delete" | translate}}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <div class="total-price">
+      <button ion-button clear (click)="orderNow()">Order now</button>
+
+      <p>{{"body.total" | translate}} : AFN {{totalPrice}}</p>
+    </div>
+  </ion-list>
+</ion-content>

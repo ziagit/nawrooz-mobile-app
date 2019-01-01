@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Account Page </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <button ion-item (click)="pushAccountSettingPage()">
+      Account Setting
+      <ion-icon name="settings" item-end color="nawrooz-default" mini></ion-icon>
+    </button>
+    <button ion-item (click)="pushCartPage()">
+      My Cart
+      <ion-icon class="notification-icon" name="cart" item-end color="nawrooz-default">
+        <ion-badge class="notification-badge">{{cart}}</ion-badge>
+      </ion-icon>
+    </button>
+      <button ion-item (click)="pushWishlistPage()">
+      My Wishlist
+      <ion-icon class="notification-icon"  name="heart" item-end color="nawrooz-default">
+      <ion-badge class="notification-badge" color="secondary">{{wishlist}}</ion-badge>
+      </ion-icon>
+    </button>
+    <button ion-item (click)="pushBoughtPage()">
+      Bought Items
+      <ion-icon class="notification-icon"  name="cart" item-end color="nawrooz-default">
+      <ion-badge class="notification-badge">{{no}}</ion-badge>
+      </ion-icon>
+    </button> 
+  </ion-list>
+</ion-content>

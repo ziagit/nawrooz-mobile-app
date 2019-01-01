@@ -1,0 +1,14 @@
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Phone Number</ion-label>
+    <ion-input type="tel"[(ngModel)]="phoneNumber"></ion-input>
+  </ion-item>
+  <ion-fab button right bottom>
+    <button ion-fab (click)="callUs()">
+      <ion-icon name="call"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

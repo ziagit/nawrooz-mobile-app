@@ -1,0 +1,29 @@
+page-product {
+    .img-container{
+        background-color: #ddd;
+    }
+    .item-title{
+        text-align: center;
+        align-items: center;
+    }
+    .price{
+        color: cadetblue;
+        font-size: 14px;
+    }
+    .button-more{
+        background: none;
+        color: #fff;
+    }
+    .share-buttons{
+       text-align: center;
+       align-items: center;
+       ion-icon{
+           color: #EF0041;
+       }
+    }
+    .spinner{
+        position: absolute;
+        top: 48%;
+        left: 48%;
+    }
+}

@@ -1,0 +1,108 @@
+page-home {
+    .searchbar-input-container{
+        background: #fff !important;
+        border-radius: 5px;
+        @include rtl() {
+            .searchbar-input{
+              text-align: right;
+            }
+          }
+    }
+    .content{
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: #fff;
+        .grid{
+            padding: 0 !important;
+            background-color: #fff;
+            .row{
+                padding: 0 !important;
+                margin: 0 0 7px 0 !important;
+                background-color: #F2F2F2;
+                .col{
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    img{
+                        min-height: 100%;
+                    }
+                    .img-container{
+                        background-color: #ddd;
+                    }
+                    .item-title{
+                        text-align: center;
+                        align-items: center;
+                    }
+                    .share-buttons{
+                        text-align: center;
+                        button{
+                            margin-top: 0px;
+                        }
+                        ion-icon{
+                            color: #EF0041;
+                        }
+                     }
+                    .price{
+                        color: cadetblue;
+                        font-size: 14px;
+                    }
+                }
+                .shadow{
+                    display: block;
+                    box-shadow: inset 0px -20px 40px -10px #000000;     
+                    img{
+                        position:relative; 
+                        z-index: -1;
+                    } 
+                }
+                .row-header{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1px 0 0 14px;
+                    align-items: center;
+                    height: 30px;
+                    h3{
+                        margin: 0 !important;
+                        padding: 0 !important;
+                    }
+                }
+                @include rtl() {
+                    .row-header{
+                        padding: 1px 10px 0 0;
+                    }
+                }
+            }                
+            .collection-container{
+                padding: 13px 2px 13px 2px !important;
+                .collection-title{
+                    margin: 1px;
+                    align-items: center !important;
+                    .fab-container{
+                        display: flex;
+                        justify-content: space-around;
+                        position: relative;
+                    }
+                    .collection-text{
+                        font-size: 13px;
+                        font-family: "Calibri";
+                        margin: 2px 0px 0px 0px;
+                    }
+                }
+                .collection-title:hover{
+                    color: #EE0070;
+                }
+            }
+            .bunner{
+                margin: 11px;
+            }
+        }
+        .hidden-elements-deals:nth-child(n+10){
+            display: none;
+
+        }
+    }
+
+       
+    
+   
+}

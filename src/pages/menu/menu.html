@@ -1,0 +1,22 @@
+<ion-list>
+  <ion-list-header>{{"body.sort_by" | translate}}</ion-list-header>
+  <ion-item-group>
+    <ion-item-divider color="light">{{"body.color" | translate}}</ion-item-divider>
+    <div class="color-container">
+      <button ion-button *ngFor="let c of colors" color="{{c.color}}" class="btn-color"></button>
+    </div>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light">{{"body.size" | translate}}</ion-item-divider>
+    <div class="color-container">
+      <button ion-button clear *ngFor="let size of sizes" >{{size.label}}
+      </button>
+    </div>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light">{{"body.vendor" | translate}}</ion-item-divider>
+    <button ion-button clear *ngFor="let vendor of vendors" >{{vendor.label}}</button>
+    <div class="color-container">
+    </div>
+  </ion-item-group>
+</ion-list>

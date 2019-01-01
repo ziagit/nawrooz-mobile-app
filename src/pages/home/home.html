@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar platform="ios" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-slides pager autoplay="4000" loop="true" speed="1000" dir="rtl" class="slides-container">
+        <ion-slide *ngFor="let i of imageSlide">
+          <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
+            <div class="shadow">
+              <img src="{{i?.img}}">
+            </div>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+
+    <ion-row class="collection-container">
+      <ion-slides slidesPerView="5" dir="auto">
+        <div *ngFor="let collection of collections">
+          <ion-slide *ngIf="collection">
+            <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
+              <div class="collection-title" (click)="pushProductPage(collection.id, collection?.title)">
+                <ion-fab class="fab-container">
+                  <button ion-fab color="simi-dark">
+
+                  </button>
+                </ion-fab>
+                <p class="collection-text">{{collection?.title}}</p>
+              </div>
+            </ion-col>
+          </ion-slide>
+        </div>
+      </ion-slides>
+    </ion-row>
+
+    <ion-row>
+      <div class="row-header">
+        <h3>{{"body.special_offers" | translate}}</h3>
+      </div>
+      <ion-slides slidesPerView="2" dir="auto">
+        <ion-slide *ngFor="let offer of offers" no-padding>
+          <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3>
+            <ion-card>
+              <div class="img-container" (click)="pushProductDetailPage(offer)">
+                <img src="{{offer.images[0]?.src}}" />
+              </div>
+              <ion-card-header class="item-title">
+                <span class="price">{{"body.afn" | translate}} {{offer.variants[0].price}}</span>
+                <br>
+                <span>{{offer.title}}</span>
+              </ion-card-header>
+              <ion-card-content>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+
+    <ion-row>
+      <div class="bunner">
+        <ion-col col-12>
+          <img src="assets/imgs/banner.jpg" alt="">
+        </ion-col>
+      </div>
+    </ion-row>
+
+    <ion-row>
+      <div class="row-header">
+        <h3>{{"body.top_deals" | translate}}</h3>
+        <button ion-button color="primary" clear (click)="viewTopDeals('Top Deals')">{{"body.see_all" | translate}}
+          &nbsp;
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+      <ion-col class="hidden-elements-deals" *ngFor="let deal of deals" col-6 col-sm-9 col-md-6 col-lg-4 col-xl-3>
+        <ion-card (click)="pushProductDetailPage(deal)">
+          <div class="img-container">
+            <img src="{{deal.images[0]?.src}}" />
+          </div>
+          <ion-card-header class="item-title">
+            <span class="price">{{"body.afn" | translate}} {{deal.variants[0].price}}</span>
+            <br>
+            <span>{{deal.title}}</span>
+          </ion-card-header>
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <div class="bunner">
+        <ion-col col-12>
+          <img src="assets/imgs/banner2.jpg" alt="">
+        </ion-col>
+      </div>
+    </ion-row>
+
+    <ion-row>
+      <div class="row-header">
+        <h3>{{"body.new" | translate}}</h3>
+        <button ion-button color="primary" clear (click)="viewNew('New Products')">{{"body.see_all" | translate}}
+          &nbsp;
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+      <ion-col class="hidden-elements-new" col-6 col-sm-9 col-md-6 col-lg-4 col-xl-3 *ngFor="let new of news">
+        <ion-card>
+          <div class="img-container" (click)="pushProductDetailPage(new)">
+            <img src="{{new.images[0]?.src}}" src-fallback="assets/imgs/no-image.jpg" alt="No image available" />
+          </div>
+          <ion-card-header class="item-title">
+            <span class="price">{{"body.afn" | translate}} {{new.variants[0].price}}</span>
+            <br>
+            <span>{{new.title}}</span>
+          </ion-card-header>
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingText="Loading..."></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+</ion-footer>

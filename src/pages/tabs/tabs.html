@@ -1,0 +1,10 @@
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab tabIcon="home" [root]="home"></ion-tab>
+    <ion-tab tabIcon="albums" [root]="collection"></ion-tab>
+    <ion-tab tabIcon="cart" [root]="cart" tabBadge="{{cartLen}}"></ion-tab>
+    <ion-tab tabIcon="heart" [root]="wishList" tabBadge="{{wishListLen}}" tabBadgeStyle="secondary"></ion-tab>
+    <ion-tab tabIcon="settings" [root]="setting"></ion-tab>
+  </ion-tabs>
+</ion-content>

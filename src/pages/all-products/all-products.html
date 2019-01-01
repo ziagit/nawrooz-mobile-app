@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar class="navbar">
+    <ion-title>{{collection.title}}</ion-title>
+    <ion-buttons end>
+      <button class="button-more" (click)="openPopup($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-spinner class="spinner" name="circles" *ngIf="products == 0"></ion-spinner>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="hidden-elements-new" col-6 col-sm-9 col-md-6 col-lg-4 col-xl-3 *ngFor="let product of products">
+        <ion-card>
+          <div class="img-container" (click)="pushProductDetailPage(new)">
+            <img src="{{product.images[0]?.src}}" src-fallback="assets/imgs/no-image.jpg" alt="No image available" />
+          </div>
+          <ion-card-header class="item-title">
+            <span class="price">{{"body.afn" | translate}} {{product.variants[0].price}}</span>
+            <br>
+            <span>{{product.title}}</span>
+          </ion-card-header>
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingText="Loading..."></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

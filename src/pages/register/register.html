@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{"header.register" | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="logo">
+    <img src="assets/imgs/logo.png" alt="">
+  </div>
+  <ion-card>
+    <form [formGroup]="form" (ngSubmit)="registerCustomer()">
+      <ion-list>
+        <ion-item> 
+          <ion-label floating>{{"body.email" | translate}}</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{"body.password" | translate}}</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>{{"body.password_confirmation" | translate}}</ion-label>
+          <ion-input type="password" formControlName="password_confirmation"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button class="button-signup" ion-button block>{{"header.register" | translate}}</button>
+    </form>
+  </ion-card>
+</ion-content>

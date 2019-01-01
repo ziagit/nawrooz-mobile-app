@@ -1,0 +1,95 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for navigate info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{"header.setting" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider>{{"body.customer_service" | translate}}</ion-item-divider>
+    <ion-item (click)="pushAccountPage()">
+      <ion-icon class="my-icon" name="person" item-start color="nawrooz-default"></ion-icon>
+      <ion-label>{{"body.account" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item (click)="pushAboutPage()">
+      <ion-icon class="my-icon" name="information" item-start color="nawrooz-default"></ion-icon>
+      <ion-label>{{"body.about_us" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+    <ion-item (click)="popOverLanguagePage()">
+      <ion-icon class="my-icon" name="globe" item-start color="nawrooz-default"></ion-icon>
+      <ion-label>{{"body.language" | translate}}</ion-label>
+      <ion-select #opt [(ngModel)]="lang" multiple="false" cancelText="{{'body.cancel' | translate}}" okText="{{'body.ok' | translate}}"
+        (ionChange)="switchLanguage(opt.value)">
+        <ion-option value="en" selected="true">{{"body.english" | translate}}</ion-option>
+        <ion-option value="da">{{"body.dari" | translate}}</ion-option>
+        <ion-option value="pa">{{"body.pashto" | translate}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item (click)="popOverCurrencyPage()">
+      <ion-icon class="my-icon" name="cash" item-start color="nawrooz-default"></ion-icon>
+      <ion-label>{{"body.currency" | translate}}</ion-label>
+      <ion-select [(ngModel)]="currency" multiple="false" cancelText="{{'body.cancel' | translate}}" okText="{{'body.ok' | translate}}">
+        <ion-option value="afn" selected="true">{{"body.afn" | translate}}</ion-option>
+        <ion-option value="usd">{{"body.usd" | translate}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item (click)="pushAboutHelpPage()">
+      <ion-icon class="my-icon" name="help" item-start color="nawrooz-default"></ion-icon>
+      <ion-label>{{"header.help" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>{{"body.contact" | translate}}</ion-item-divider>
+    <ion-item (click)="popOverCallPage($event)">
+      <ion-icon class="my-icon" name="call" item-start color="nawrooz-default"></ion-icon>
+      <ion-label> {{"body.call" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+    <ion-item (click)="popOverSmsPage($event)">
+      <ion-icon class="my-icon" name="text" item-start color="nawrooz-default"></ion-icon>
+      <ion-label> {{"body.sms" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+    <ion-item (click)="popOverEmailPage()">
+      <ion-icon class="my-icon" name="mail" item-start color="nawrooz-default"></ion-icon>
+      <ion-label>{{"body.email" | translate}}
+        <a href="#">{{"body.email_info" | translate}}</a>
+      </ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>{{"body.social_media" | translate}}</ion-item-divider>
+    <ion-item (click)="goToFacebook()">
+      <ion-icon class="my-icon" name="logo-facebook" item-start color="facebook"></ion-icon>
+      <ion-label>{{"body.facebook" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+    <ion-item (click)="goToTwitter()">
+      <ion-icon class="my-icon" name="logo-twitter" item-start color="twitter"></ion-icon>
+      <ion-label>{{"body.twitter" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+    <ion-item (click)="goToInstagram()">
+      <ion-icon class="my-icon" name="logo-instagram" item-start color="instagram"></ion-icon>
+      <ion-label>{{"body.instagram"| translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+    <ion-item (click)="goToPinetrest()">
+      <ion-icon class="my-icon" name="logo-pinterest" item-start color="pinetrest"></ion-icon>
+      <ion-label>{{"body.pinetrest" | translate}}</ion-label>
+      <ion-icon name="ios-arrow-round-forward" item-end class="item-arrow"></ion-icon>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>

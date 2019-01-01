@@ -1,0 +1,22 @@
+page-wish-list {
+    .card{
+        height: 100px;
+        padding: 10px;
+    }
+    .item-label{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #333;
+    }
+    @include rtl() {
+        .total-price{
+            float: left;
+        }
+    }
+    @include ltr() {
+        .total-price{
+            float: right;
+        }
+    }
+}

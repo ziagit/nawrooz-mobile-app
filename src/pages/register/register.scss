@@ -1,0 +1,35 @@
+page-register {
+    .content{
+        background-image: url("/assets/imgs/splash-screen-06.jpg");
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+    .logo{
+        height: 25%;
+        text-align: center;
+        img{
+            height: 100%;
+        }
+    }
+    .card{
+        padding: 20px;
+        .inner-container{
+            margin-bottom: 10%;
+            .item{
+                border: none;
+                color: #888;
+            }   
+        }
+        .button-signup{
+            background-color: #232F3E;
+        }
+        .button-signup:hover{
+            background: linear-gradient(to right, #EE0070, #F1001E) !important;
+        }
+        .register{
+            height: 20px;
+        }
+    }
+    
+}

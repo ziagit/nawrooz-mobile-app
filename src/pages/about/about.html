@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>About Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <div #map id="map"></div>
+    <ion-card-content>
+      <ion-card-title>
+       {{title}}
+        </ion-card-title>
+      <p>
+        {{description}}
+      </p>
+    </ion-card-content>
+    <button ion-button clear (click)="openFacebook()">
+      <ion-icon name="logo-facebook"> </ion-icon>&nbsp; Like Us On  Facebook</button>
+  </ion-card>
+
+</ion-content>

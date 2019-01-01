@@ -1,0 +1,28 @@
+page-product-variant {
+    .ion-item{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        img{
+            flex: 2;
+            width:100px;
+            height: 100px;
+            margin-right: 5px;
+        }
+        .label{
+            flex: 9;
+            h5{
+                font-size: 14px;
+            }
+        }
+        .radio{
+            float: 1;
+        }
+
+    }
+    .button-add{
+        float: right;
+        margin: 5px !important;
+        width: 30%;
+    }
+}

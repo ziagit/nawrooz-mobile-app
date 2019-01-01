@@ -1,0 +1,33 @@
+page-cart {
+    .item-label{
+        align-items: center;
+        color: #333;
+        .product-title{
+            font-size: 18px;
+        }
+        .price-value, .qty-value{
+            color: rgb(13, 129, 90);
+        }
+    }
+    .total-price{
+        width: 100%;
+        color: rgb(13, 129, 90);
+        display: flex;
+        justify-content: space-between;
+        .button{
+            color: #333;
+        }
+    }
+    @include rtl() {
+        .total-price{
+            float: left;
+        }
+    }
+    @include ltr() {
+        .total-price{
+            float: right;
+        }
+    }
+
+
+}

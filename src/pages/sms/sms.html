@@ -1,0 +1,19 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sending SMS</ion-title>
+    <button ion-button right clear (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card>
+  <ion-label *ngIf="isSent">{{label}}</ion-label>
+  <hr *ngIf="isSent">
+  <ion-textarea type="textarea" [(ngModel)]="text" placeholder="Type your message here."></ion-textarea>
+  <button ion-button clear (click)="send()">Send</button>
+</ion-card>
+</ion-content>

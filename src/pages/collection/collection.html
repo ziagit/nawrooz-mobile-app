@@ -1,0 +1,30 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar platform="ios" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  <div class="collection-header">
+    <h3>{{"body.collection" | translate}}</h3>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let collection of collections">
+          <img src="{{collection.image?.src}}" />
+          <div class="card-title">{{collection.title}}</div>
+          <div class="card-button">
+            <button ion-button color="nawrooz-default" (click)="buy(collection.title, collection.id)">{{"body.buy_now"
+              | translate}}</button>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
